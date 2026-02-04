@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: streamlit-rag-container
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+    restart: always
+
+# 필요한 경우 여기에 ChromaDB나 Redis 같은 외부 DB 서비스를 추가할 수 있습니다.
