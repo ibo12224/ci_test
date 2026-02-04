@@ -16,6 +16,7 @@ COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. 소스 코드 및 데이터 복사
+# 이후 코드에서 pd.read_csv("data/your_file.csv")로 접근 가능
 COPY app/ ./
 COPY data/ ../data/
 
